@@ -1,0 +1,21 @@
+.container{
+	display: flex;
+	flex-direction: column;
+}
+
+.box{
+	padding: 50px;
+	background-color: #DDD;
+	text-align: center;
+	border: 1px solid #AAA;
+}
+
+@media(min-width: 600px){
+	.container{
+		flex-direction: row;
+	}
+
+	.box{
+		flex-grow: 1;/*//Khi chieu rong trinh duyet tang thi chieu rong cua box cung tang*/
+	}
+}

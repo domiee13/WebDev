@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		#add-btn{
+			border:none;
+			background-color:aqua;
+			width: 80px;
+			height: 37px;
+		}
+		#input{
+			height: 30px;
+			width: 200px;
+		}
+		h1{
+			padding-left: 60px;
+		}
+		#deleteBtn{
+			background-color: red;
+			border: none;
+		}
+	</style>
+	<title>This is my fucking todo list</title>
+</head>
+<body>
+	<h1>To do list</h1>
+	<input type="text" placeholder="Enter something u need to do" name="" id="input">
+	<button id="add-btn">Add</button>
+	<div id="list"></div>
+	<script type="text/javascript">
+		var todo = [];
+
+		var storageKey = 'todoList';
+		var dataString = localStorage.getItem(storageKey);
+		var list = document.getElementById('list');
+
+
+		if(dataString){
+			todo = JSON.parse(dataString);
+		}
+		else todo = [];
+
+		var input = document.getElementById('input');
+		var button  = document.getElementById('add-btn');
+		
+		button.addEventListener('click',addItem);
+		list.addEventListener('click',deleteItem);
+		//Ham them item
+		function addItem(){
+			var val = input.value;
+			todo.push(val);
+			render(todo);
+			localStorage.setItem(storageKey,JSON.stringify(todo));
+			input.value = "";
+		}
+		//Ham hien thi
+		function render(data){
+			var content = data.map(function(item,index){
+				return '<li>' + item + '  <button id="deleteBtn" data-id ='+index+'>Delete</button></li>';
+			});
+			list.innerHTML = '<ul>'+ content.join("") + '</ul>';
+		}
+
+		function deleteItem(event){
+			var i = JSON.parse(event.target.dataset.id);
+			todo.splice(i,1);
+			localStorage.setItem(storageKey,JSON.stringify(todo));
+			render(todo);
+		}
+
+		render(todo);
+	</script>
+</body>
+</html>

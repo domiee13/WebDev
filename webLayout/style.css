@@ -1,0 +1,30 @@
+body{
+	font-family: Arial, sans-serif;
+}
+
+.header{
+	height: 100px;
+	background-color: yellow;
+}
+
+.sidebar{
+	float: left;
+	width: 20%;
+	background-color: blue;
+}
+
+.main{
+	margin-left: 20%;
+	background-color: red;
+}
+
+.content:after{
+	content: '';
+	display: block;
+	clear:both;
+	height: 100px;
+}
+
+.footer{
+	background-color: green;
+}

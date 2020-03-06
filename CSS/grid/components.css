@@ -1,0 +1,29 @@
+.weekly-item{
+	display: flex;
+	padding: 12px 0;
+	border-bottom: 1px solid #EEE;
+}
+
+.weekly-item .number{
+	font-size: 24px;
+	padding:0 8px;
+}
+
+.weekly-item .view-count{
+	font-size: 14px;
+	color: #999;
+}
+
+.weekly-item .info{
+	padding: 0 8px;
+	flex-grow: 1;
+}
+
+.weekly-item .singer{
+	font-size: 13px;
+	color: #999;
+}
+
+.weekly-item .title{
+	margin-bottom: 8px;
+}

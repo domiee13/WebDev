@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Todo List</title>
+</head>
+<body>
+	<input id="input" type="text" name="">
+	<button id="add-btn">Add</button>
+	<div id="display"></div>
+
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script type="text/javascript">
+		var url = 'http://localhost:9081/todos';
+		var data = [];
+		//Bien data dang co van de ?
+		var display = document.getElementById('display');
+		var input = document.getElementById('input');
+		var button = document.getElementById('add-btn');
+		//Get data from json file
+		function show(){
+			axios.get(url).then(function(res){
+				data = res.data;
+				render(data);
+				console.log(data);
+			}).catch(function(err){
+				console.log(err);
+			});
+		}
+
+		function render(data){
+			var content = data.map(function(item,index){
+				return '<li>' + item.content + ' <button data-id='+item.id+'>Delete</button></li>';
+			});
+			display.innerHTML = '<ul>' + content.join("") + '</ul>';
+		}
+
+
+		//Add(post) data to json file
+		button.addEventListener('click', addItem);
+		function addItem(){ 
+			var val = input.value;
+			var id = data.length+ 1;
+			var newItem = {"id":id,"content":input.value};
+			data.push(newItem);
+			console.log(data);
+			axios.post(url,newItem).then(function(){
+				show();
+				console.log("Done");
+			}).catch(function(err){
+				console.log(err);
+			});
+			
+			input.value = "";
+
+		}
+		//Delete
+
+		display.addEventListener('click',deleteItem);
+		function deleteItem(event){
+			var id = JSON.parse(event.target.dataset.id);
+			var delUrl = url + '/' + id.toString();
+			axios.delete(delUrl).then(function(res){
+				console.log(data);
+				show();
+			}).catch(function(err){
+				console.log(err);
+			});
+		}
+		show();
+
+		//Vi o day dang khong co ham update() ?
+	</script>
+</body>
+</html>

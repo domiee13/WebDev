@@ -1,0 +1,33 @@
+#inputName,#inputPhoneNum,#searchBox{
+	width: 250px;
+	height: 20px;
+}
+#addBtn{
+	border: none;
+	background-color: #3CAEA3;
+	width: 100px;
+	height: 27px;
+}
+#deleteBtn{
+	border:none;
+	background-color: #ED553B;
+	width: 100px;
+	height: 21px;
+}
+#display{
+	font-family: 'Barlow', sans-serif;
+	line-height: 1.8;
+}
+h1{
+	font-family: 'Shadows Into Light', cursive;
+}
+#item{
+	border-style: solid;
+	border-left-width: 8px;
+	border-right-width: 0px;
+	border-top-width: 0px;
+	border-bottom-width: 0px;
+	padding-left: 16px;
+	border-color: #F6D55C;
+	margin-bottom: 8px;
+}

@@ -1,0 +1,22 @@
+.container{
+	background-color: gray;
+	width: 300px;
+	height: 300px;
+
+}
+
+.inner-container{
+	background-color: black;
+	width: 200px;
+	height: 200px;
+	position: relative;
+}
+
+.child{
+	background-color: blue;
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}

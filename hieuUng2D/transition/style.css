@@ -1,0 +1,46 @@
+.button{
+	text-decoration: none;
+	font-size: 40px;
+	background-color: #DDD;
+	display: inline-block;
+	padding: 8px 16px;
+	color: #333;
+	transition: all 0.7s;
+}
+
+.button:hover{
+	background-color: #0056b3;
+	color: #FFF;
+}
+
+.album{
+	width: 200px;
+	height: 200px;
+	background-image: url('https://loremflickr.com/320/240');
+}
+
+.overlay{
+	font-size: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	color: white;
+	background-color: rgba(0,0,0,0.6);
+	opacity: 0;
+	transition: all 0.7s; /*Dung cho overlay*/
+}
+
+.overlay i{
+	transform: scale(0);
+	transition: all 0.5s; /*Khong co cai nay thi khong co hieu ung zoom ?*/
+	/*Dung cho rieng icon*/
+}
+
+.overlay:hover{
+	opacity: 1;
+}
+
+.overlay:hover i{
+	transform: scale(1);
+}

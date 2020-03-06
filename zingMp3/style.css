@@ -1,0 +1,108 @@
+body{
+	font-family: Arial,san-serif;
+	width: 500px;
+}
+
+.weekly-item{
+	display: flex;
+	padding: 12px 0;
+	border-bottom: 1px solid #EEE;
+}
+
+.weekly-item .number{
+	font-size: 24px;
+	padding:0 8px;
+}
+
+.weekly-item .view-count{
+	font-size: 14px;
+	color: #999;
+}
+
+.weekly-item .info{
+	padding: 0 8px;
+	flex-grow: 1;
+}
+
+.weekly-item .singer{
+	font-size: 13px;
+	color: #999;
+}
+
+.weekly-item .title{
+	margin-bottom: 8px;
+}
+
+.album-cover{
+	width: 128px;
+	height: 128px;
+/*	background-color: #DDD;
+*/	font-family: arial, san-serif;
+	color: #FFF;
+	background-image: url('https://loremflickr.com/128/128')
+}
+
+
+.album-cover .overlay{
+	height: 100%;
+	background: rgb(0,0,0);
+background: linear-gradient(0deg, rgba(0,0,0,0.7693452380952381) 0%, rgba(0,0,0,0.1110819327731093) 50%, rgba(255,255,255,0) 100%);
+	display: flex;
+	align-items: flex-end;
+	font-size: 20px;
+	padding: 8px;
+	box-sizing: border-box; /*Lam cho overlay nam trong album cover, padding se khong lam thay doi size cua doi tuong dang su dung thuoc tinh ay*/
+}
+
+.weekly-album {
+	display: flex;
+	margin-top: 10px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #EEE;
+}
+
+.weekly-album .info{
+	flex-grow: 1;
+	margin-left: 30px;
+	display: flex;
+	flex-direction: column;
+}
+
+.weekly-album .info .title{
+	font-size: 24px;
+	padding-bottom: 10px;
+	/*text-transform: */
+}
+
+.weekly-album .singer{
+	color: #AAA;
+	padding-bottom: 6px;
+}
+
+.weekly-album .view-count{
+	color:#AAA;
+}
+
+
+.album-cover .cover{
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
+}
+
+.album-cover:hover .cover{ /*Hoac .album-cover .cover:hover;*/
+	opacity: 1;
+}
+
+.album-cover .title{
+	color:black;
+	font-size: 18px;
+}
+
+.album-cover .singer{
+	color: black;
+	font-size: 15px;
+}
